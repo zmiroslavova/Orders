@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace WindowsFormsApp9
+namespace Orders
 {
     public partial class Form_order : Form
     {
@@ -66,8 +66,7 @@ namespace WindowsFormsApp9
                 + int.Parse(textBox_numberMedalsSilver.Text)
                 + int.Parse(textBox_numberMedalsBronze.Text);
         }
-
-
+        
         private void textBox_numberOrder_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -147,8 +146,7 @@ namespace WindowsFormsApp9
                 button_review.PerformClick();
             }
         } 
-
-                        
+                                
         private void button_review_Click(object sender, EventArgs e)
         {
             this.button_save.Enabled = true;
@@ -184,7 +182,6 @@ namespace WindowsFormsApp9
             output += "Брой бронзови: " + this.textBox_numberMedalsBronze.Text + "\r\n";
             output += "Общ брой медали: " + totalMedals().ToString() + "\r\n";
         
-
             if (radioButton_stripYes.Checked)
                 output += "Брой ленти: " + totalMedals().ToString() + "\r\n";
             else
@@ -201,10 +198,8 @@ namespace WindowsFormsApp9
             }    
             output += "Надпис на лице: " + this.richTextBox_textFront.Text + "\r\n";
             output += "Надпис на гръб: " + this.richTextBox_textBack.Text + "\r\n";
-            this.richTextBox_finalPreview.Text = output;
-            
-        }
- 
+            this.richTextBox_finalPreview.Text = output;            
+        } 
 
         private void textBox_numberOrder_TextChanged(object sender, EventArgs e)
         {
@@ -214,7 +209,6 @@ namespace WindowsFormsApp9
                 textBox_numberOrder.Text = RemoveNonNumbersFromString(textBox_numberOrder.Text);
             }
         }
-
 
         private void textBox_mobNumber_TextChanged(object sender, EventArgs e)
         {
@@ -264,9 +258,7 @@ namespace WindowsFormsApp9
         public static string RemoveNonNumbersFromString(string input)
         {
             return new string(input.Where(c => char.IsDigit(c)).ToArray());
-        }
-
-        
+        }        
 
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -276,8 +268,7 @@ namespace WindowsFormsApp9
             
             MessageBox.Show("Файла е записан в папката, в която се изпълнява приложенето");
         }
-
-
+        
         private void button_new_Click(object sender, EventArgs e) => clear();
 
         void clear()
@@ -297,7 +288,6 @@ namespace WindowsFormsApp9
             textBox_numberOrder.Focus();
         }
         
-
         private void button_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -309,8 +299,6 @@ namespace WindowsFormsApp9
             {
                 this.Close();
             }
-        }
-
-        
+        }       
     }
 }
