@@ -31,31 +31,31 @@ namespace Orders
                textBox_email.Text == "" ||
                textBox_articleNumber.Text == "")
             {
-                MessageBox.Show("Моля попълнете празните полета");
+                MessageBox.Show("Моля попълнете празните полета!");
             }
 
             if (textBox_numberMedalsGold.Text == "" ||
                 textBox_numberMedalsSilver.Text == "" ||
                 textBox_numberMedalsBronze.Text == "")
             {
-                MessageBox.Show("Ако не желаете от този вид медал запишете 0 (нула)");
+                MessageBox.Show("Ако не желаете от този вид медал запишете 0 (нула)!");
             }
 
             if (!(textBox_email.Text.Contains("@")))
             {
-                MessageBox.Show("Въведете коректно email адреса");
+                MessageBox.Show("Въведете коректно email адреса!");
                 return;
             }
 
             if (!(textBox_email.Text.Contains(".")))
             {
-                MessageBox.Show("Въведете коректно email адреса");
+                MessageBox.Show("Въведете коректно email адреса!");
                 return;
             }
 
             if (textBox_email.Text.Contains(" "))
             {
-                MessageBox.Show("Въведете коректно email адреса");
+                MessageBox.Show("Въведете коректно email адреса!");
                 return;
             }
         }
